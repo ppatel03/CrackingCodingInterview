@@ -1,5 +1,5 @@
 /**
- * A sorted array has been rotated so that the elements might appear in the order 3 4 5 6 7 1 2. 
+3... * A sorted array has been rotated so that the elements might appear in the order 3 4 5 6 7 1 2. 
  * 	1. How would you find the minimum element?
  * 	2. Find a particular element in an array ?
  * 
@@ -47,15 +47,18 @@ public class RotatedArraySearch {
 
 	public static int search(int[] a, int lowerIndex, int upperIndex, int numberToFind){
 
-		if(lowerIndex < upperIndex){
+		if(lowerIndex <= upperIndex){
 			int mid = (lowerIndex + upperIndex) / 2;
+			
+			System.out.println("lowerIndex = "+lowerIndex+" and upperIndex = "+upperIndex+" and mid = "+mid);
+
 
 			if(a[mid] == numberToFind){
 				return mid;
 			}
 			if(a[lowerIndex] < a[upperIndex]){
 				// traditional binary search boundary condition for left half
-				if(numberToFind > a[lowerIndex] ){
+				if(numberToFind < a[mid] ){
 					upperIndex = mid - 1;
 				}
 				// search for right half
@@ -91,11 +94,13 @@ public class RotatedArraySearch {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		int []a = {3,4,5,6,7,1,2,};
+		//int []a = {3,4,5,6,7,1,2};
 		
-		System.out.println("The Reset number is at location : "+findMinimum(a));
+		int[]a = {15, 16, 19, 20, 25, 1, 3, 4, 5, 7, 10, 14};
 		
-		int numberToFind = 4;
+		System.out.println("The Minimum number is at location : "+findMinimum(a));
+		
+		int numberToFind = 5;
 		
 		System.out.println("The number "+numberToFind+" is located at position : "+(search(a, 0, a.length-1, numberToFind)+1));
 

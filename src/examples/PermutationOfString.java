@@ -12,6 +12,9 @@
  */
 package examples;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author prashant
  *
@@ -33,7 +36,7 @@ public class PermutationOfString {
 
 
 	public static void permute(String input, int n, int k){
-
+     
 		if(k == n-1){
 			System.out.println(input);
 		}
