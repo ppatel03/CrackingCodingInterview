@@ -177,7 +177,7 @@ public class TreeBalanceCheck {
 		if(node == null){
 			return 0;
 		}
-		else return 1 + Math.min(getMaxDepth(node.left),getMaxDepth(node.right));
+		else return 1 + Math.min(getMinDepth(node.left),getMinDepth(node.right));
 	}
 
 	/**
